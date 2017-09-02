@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : Player {
 
-    public float speed, jumpSpeed = 5.0f;
+    public float jumpSpeed = 5.0f;
     public float firerate = 0.3f;
     public GameObject fireball;
 
@@ -22,9 +22,8 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-        transform.position += move * speed * Time.deltaTime;
-
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0) * this.speed;
+        transform.position += move * Time.deltaTime;
 
         if (Input.GetKey("a"))
         {
