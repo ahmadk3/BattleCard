@@ -27,7 +27,7 @@ public class CardFireball : Card {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag.Equals("Enemy") || other.tag.Equals("Floor") || other.tag.Equals("Wall"))
+        if(other.tag.Equals("Enemy"))
         {
             Destroy(this.gameObject, 1f);
             anim.SetBool("Hit", true);
@@ -35,6 +35,12 @@ public class CardFireball : Card {
             Rigidbody2D otherRb = other.GetComponent<Rigidbody2D>();
             Vector3 force = new Vector3(5, 0, 0) * (t.rotation.y != 0.0f ? -1.0f : 1.0f);
             otherRb.AddForce(force, ForceMode2D.Impulse);
+        }
+        else if (other.tag.Equals("Floor") || other.tag.Equals("Wall"))
+        {
+            Destroy(this.gameObject, 1f);
+            anim.SetBool("Hit", true);
+            rb.velocity = rb.velocity / 50;
         }
     }
 }
