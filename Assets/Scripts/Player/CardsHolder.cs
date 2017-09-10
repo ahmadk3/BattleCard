@@ -47,14 +47,14 @@ public class CardsHolder : MonoBehaviour {
             }
         }
 
-        else if (Input.GetKey("3"))
+        else if (Input.GetKey("3") && Time.time > nextfire[2])
         {
             GameObject card = (GameObject)Instantiate(cards[2], t.position, t.rotation);
             nextfire[2] = Time.time + card.GetComponent<Card>().cooldown;
             card.SetActive(true);
         }
 
-        else if (Input.GetKey("4"))
+        else if (Input.GetKey("4") && Time.time > nextfire[3])
         {
             GameObject card = (GameObject)Instantiate(cards[3], t.position, t.rotation);
             nextfire[3] = Time.time + card.GetComponent<Card>().cooldown;

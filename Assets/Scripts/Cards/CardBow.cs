@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardBow : MonoBehaviour {
+public class CardBow : Card {
     public GameObject arrow;
-    public float cooldown = 1f;
+    public float arrowCooldown = 1f;
 
     private Transform t;
     private float nextfire = 0.0f;
@@ -12,6 +12,7 @@ public class CardBow : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         t = GetComponent<Transform>();
+        Destroy(this.gameObject, 5.0f);
 	}
 	
 	// Update is called once per frame
@@ -24,7 +25,7 @@ public class CardBow : MonoBehaviour {
 
         if (other.CompareTag("Enemy") && Time.time > nextfire )
         {
-            nextfire = Time.time + cooldown;
+            nextfire = Time.time + arrowCooldown;
 
             GameObject g = Instantiate(this.arrow);
             g.active = true;
@@ -33,6 +34,11 @@ public class CardBow : MonoBehaviour {
             //Vector3 force = new Vector3(10, 0, 0);
             rb.AddForce((other.transform.position - this.t.position) * 5, ForceMode2D.Impulse);
             t.position = this.t.position;
+
+            Vector3 dir = (other.transform.position - this.t.position) * -1;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            t.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            this.t.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             //t.LookAt(other.GetComponent<Transform>());
 
         }
