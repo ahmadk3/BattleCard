@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Models\map.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Models\player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Models\map.cs" Line="12" Column="1" />
+      <File FileName="Assets\Scripts\Models\match.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Models\effect.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Models\buff.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Models\card.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
