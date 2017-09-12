@@ -23,13 +23,14 @@ public class SubCardArrow : MonoBehaviour {
     {
         if(collision.CompareTag("Enemy")){
             //this.bc.enabled = false;
-            this.rb.velocity = Vector3.zero;
-            this.rb.angularVelocity = 0.0f;
+            
             this.rb.mass = 0.0001f;
             this.fj.enabled = true;
             this.fj.connectedBody = collision.GetComponent<Rigidbody2D>();
             Destroy(this.gameObject, 2.0f);
-
+            collision.GetComponent<Rigidbody2D>().AddForce(this.rb.velocity * 10);
+            this.rb.velocity = Vector3.zero;
+            this.rb.angularVelocity = 0.0f;
         }
     }
 }
