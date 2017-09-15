@@ -23,5 +23,13 @@ public class Player : MonoBehaviour {
 	public string team;
 	public List<GameObject> cards = new List<GameObject>();
 
+    private void Update()
+    {
+        if(this.health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
 
 }

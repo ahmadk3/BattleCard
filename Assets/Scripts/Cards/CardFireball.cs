@@ -35,6 +35,8 @@ public class CardFireball : Card {
             Rigidbody2D otherRb = other.GetComponent<Rigidbody2D>();
             Vector3 force = new Vector3(5, 0, 0) * (t.rotation.y != 0.0f ? -1.0f : 1.0f);
             otherRb.AddForce(force, ForceMode2D.Impulse);
+            Player playerScript = other.GetComponent<Player>();
+            playerScript.health -= this.damage;
         }
         else if (other.tag.Equals("Floor") || other.tag.Equals("Wall"))
         {
