@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubCardArrow : MonoBehaviour {
+public class SubCardArrow : Card {
 
     private FixedJoint2D fj;
     private Rigidbody2D rb;
@@ -31,6 +31,8 @@ public class SubCardArrow : MonoBehaviour {
             collision.GetComponent<Rigidbody2D>().AddForce(this.rb.velocity * 10);
             this.rb.velocity = Vector3.zero;
             this.rb.angularVelocity = 0.0f;
+            Player target = collision.GetComponent<Player>();
+            target.health -= this.damage;
         }
     }
 }

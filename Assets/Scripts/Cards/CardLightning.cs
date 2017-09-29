@@ -26,12 +26,13 @@ public class CardLightning : Card {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        print("oi");
         if (other.tag == "Enemy")
         {        
             GameObject go = (GameObject)Instantiate(lightning, other.transform.position + new Vector3(0, 1, -1), new Quaternion(0, 0, 0, 0));
             go.SetActive(true);
             Destroy(go, 2.0f);
+            Player target = other.GetComponent<Player>();
+            target.health -= this.damage;
         }
         
     }
