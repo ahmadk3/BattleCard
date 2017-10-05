@@ -7,7 +7,9 @@ public class Player : MonoBehaviour {
 	//Stats
 	public float health;
 	public Buff healtBuff;
-	public float hps;
+    public float maxHealth;
+    public Buff MaxHealtBuff;
+    public float hps;
 	public Buff hpsBuff;
 	public float mana;
 	public Buff manaBuff;
@@ -22,6 +24,13 @@ public class Player : MonoBehaviour {
 
 	public string team;
 	public List<GameObject> cards = new List<GameObject>();
+
+
+    public float getHealthPercentage()
+    {
+        float percentage = (health * 100.0f)/maxHealth;
+        return percentage/100.0f;
+    }
 
 
 }
