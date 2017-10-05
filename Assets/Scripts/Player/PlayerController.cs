@@ -41,7 +41,7 @@ public class PlayerController : Player {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag.Equals("Floor"))
+        if (other.gameObject.tag.Equals("Floor") || other.gameObject.tag.Equals("Platform"))
             isGrounded = true;
     }
 
