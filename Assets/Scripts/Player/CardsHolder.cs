@@ -1,18 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class CardsHolder : MonoBehaviour {
 
     public GameObject[] cards = new GameObject[4];
 
+	public Rect LifeBar;
+	public Text timeTextFireball;
     private Transform t;
     private Rigidbody rb;
-
-    private float[] nextfire = new float[4];
+	public Slider ManaBar;
+	private float[] nextfire = new float[4];
+//	private float[] manaCost = new float[4];
 
 	// Use this for initialization
 	void Start () {
+		
         t = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
 
@@ -31,6 +36,7 @@ public class CardsHolder : MonoBehaviour {
             {
                 GameObject card = (GameObject)Instantiate(cards[0], t.position, t.rotation);
                 nextfire[0] = Time.time + card.GetComponent<Card>().cooldown;
+				ManaBar.value -= card.GetComponent<Card> ().cost;
                 card.SetActive(true);
             }
                 
@@ -38,11 +44,13 @@ public class CardsHolder : MonoBehaviour {
 
         else if (Input.GetKey("2"))
         {
-            
+			
             if (cards[1] != null && Time.time > nextfire[1])
             {
+				timeTextFireball.text = "0";
                 GameObject card = (GameObject)Instantiate(cards[1], t.position, t.rotation);
                 nextfire[1] = Time.time + card.GetComponent<Card>().cooldown;
+				ManaBar.value -= card.GetComponent<Card> ().cost;
                 card.SetActive(true);
             }
         }
@@ -51,6 +59,7 @@ public class CardsHolder : MonoBehaviour {
         {
             GameObject card = (GameObject)Instantiate(cards[2], t.position, t.rotation);
             nextfire[2] = Time.time + card.GetComponent<Card>().cooldown;
+			ManaBar.value -= card.GetComponent<Card> ().cost;
             card.SetActive(true);
         }
 
@@ -58,6 +67,7 @@ public class CardsHolder : MonoBehaviour {
         {
             GameObject card = (GameObject)Instantiate(cards[3], t.position, t.rotation);
             nextfire[3] = Time.time + card.GetComponent<Card>().cooldown;
+			ManaBar.value -= card.GetComponent<Card> ().cost;
             card.SetActive(true);
         }
     }
