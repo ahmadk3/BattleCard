@@ -36,7 +36,7 @@ public class CardsHolder : MonoBehaviour {
             {
                 GameObject card = (GameObject)Instantiate(cards[0], t.position, t.rotation);
                 nextfire[0] = Time.time + card.GetComponent<Card>().cooldown;
-				ManaBar.value -= card.GetComponent<Card> ().cost;
+				ManaBar.value -= card.GetComponent<Card>().cost;
                 card.SetActive(true);
             }
                 
