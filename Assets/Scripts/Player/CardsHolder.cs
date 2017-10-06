@@ -8,7 +8,7 @@ public class CardsHolder : MonoBehaviour {
     public GameObject[] cards = new GameObject[4];
 
 	public Rect LifeBar;
-	public Text timeTextFireball;
+//	public Text timeTextFireball;
     private Transform t;
     private Rigidbody rb;
 	public Slider ManaBar;
@@ -47,7 +47,7 @@ public class CardsHolder : MonoBehaviour {
 			
             if (cards[1] != null && Time.time > nextfire[1])
             {
-				timeTextFireball.text = "0";
+//				timeTextFireball.text = "0";
                 GameObject card = (GameObject)Instantiate(cards[1], t.position, t.rotation);
                 nextfire[1] = Time.time + card.GetComponent<Card>().cooldown;
 				ManaBar.value -= card.GetComponent<Card> ().cost;
