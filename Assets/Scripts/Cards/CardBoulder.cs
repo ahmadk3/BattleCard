@@ -32,15 +32,14 @@ public class CardBoulder : Card
     {
         if (other.gameObject.tag.Equals("Enemy"))
         {
-            Destroy(this.gameObject, 1f);
-            rb.velocity = rb.velocity / 50;
+            rb.velocity = rb.velocity / 2f;
             Rigidbody2D otherRb = other.gameObject.GetComponent<Rigidbody2D>();
             Vector3 force = new Vector3(15, 0, 0) * (t.rotation.y != 0.0f ? -1.0f : 1.0f);
             otherRb.AddForce(force, ForceMode2D.Impulse);
             Player target = other.gameObject.GetComponent<Player>();
             target.health -= this.damage;
         }
-        else if (other.tag.Equals("Floor") || other.tag.Equals("Wall"))
+        else if (other.tag.Equals("Wall"))
         {
             Destroy(this.gameObject, 0f);
         }
