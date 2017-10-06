@@ -19,7 +19,7 @@ public class CardFireball : Card {
         rb = GetComponent<Rigidbody2D>();
         t = GetComponent<Transform>();
         anim = GetComponent<Animator>();
-        Debug.Log(Time.deltaTime);
+//        Debug.Log(Time.deltaTime);
         rb.velocity = (t.right * (t.rotation.y != 180.0f? 1.0f: -1.0f)) * speed * 0.015f;
         t.rotation = new Quaternion(0, player.transform.rotation.y, 0, 0);
     }
