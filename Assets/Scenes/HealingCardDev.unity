@@ -2879,7 +2879,7 @@ Prefab:
     - target: {fileID: 114754507216020910, guid: fa2328c8d05004dbd96233574c86a95b,
         type: 2}
       propertyPath: cooldown
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114754507216020910, guid: fa2328c8d05004dbd96233574c86a95b,
         type: 2}
