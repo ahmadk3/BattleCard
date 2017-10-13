@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 114628449777559402}
   - component: {fileID: 58923875529204632}
   - component: {fileID: 50194411318486892}
+  - component: {fileID: 58298385119055200}
   m_Layer: 9
   m_Name: FlyingEnemy
   m_TagString: Enemy
@@ -175,6 +176,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58298385119055200
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1943555478658366}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!58 &58923875529204632
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -311,6 +327,8 @@ MonoBehaviour:
   team: 
   cards: []
   healthBarObject: {fileID: 1014960888437742}
+  hitCooldown: 1
+  damage: 10
 --- !u!114 &114965353868940140
 MonoBehaviour:
   m_ObjectHideFlags: 1

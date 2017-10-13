@@ -15,10 +15,6 @@ public class CardBoulder : Card
 
     void Start()
     {
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("player"), LayerMask.NameToLayer("Boulder"));
-
-        this.cooldown = 1f;
-
         rb = GetComponent<Rigidbody2D>();
         t = GetComponent<Transform>();
         anim = GetComponent<Animator>();

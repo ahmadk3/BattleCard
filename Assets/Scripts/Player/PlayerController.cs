@@ -1,22 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Experimental.UIElements;
+using UnityEngine.UI;
 
 public class PlayerController : Player {
-
-	public int startingHealth = 100;                            // The amount of health the player starts the game with.
-	public int currentHealth;                                   // The current health the player has.
-	public Slider healthSlider;                                 // Reference to the UI's health bar.
-	public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
-	public AudioClip deathClip;                                 // The audio clip to play when the player dies.
-	public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
-	public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
-
-	bool isDead;                                                // Whether the player is dead.
-	bool damaged; 
-
-
 
     public float jumpSpeed = 5.0f;
     public float firerate = 0.3f;
@@ -28,11 +15,17 @@ public class PlayerController : Player {
     private bool isGrounded = false;
 
     public List<GameObject> objects = new List<GameObject>();
+
+    public GameObject healthBarObject;
+    private Image healthBar;
+
     // Use this for initialization
-	void Start () {
+    void Start () {
         rb = GetComponent<Rigidbody2D>();
         t = GetComponent<Transform>();
-	}
+
+        healthBar = healthBarObject.GetComponent<Image>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -50,6 +43,12 @@ public class PlayerController : Player {
         if (Input.GetKey("w") && isGrounded)
         {
             rb.velocity = new Vector2(0, jumpSpeed);
+        }
+
+        healthBar.fillAmount = getHealthPercentage();
+        if (this.health <= 0.0f)
+        {
+            Destroy(this.gameObject);
         }
     }
 
