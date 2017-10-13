@@ -56,3 +56,4 @@ MonoBehaviour:
   charges: 0
   cardName: 
   damage: 0
+  healthPoints: 10
