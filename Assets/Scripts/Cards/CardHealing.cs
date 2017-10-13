@@ -18,14 +18,14 @@ public class CardHealing : Card {
 
 	void OnTriggerEnter2D() {
 		print("ESTOU AQUI");
-//		Player player = gameObject.GetComponent<Player> ();
+//		Player player = gameObject.GetComponent<Player> () as Player;
 
 //		GameObject playerObj = GameObject.FindWithTag("Player");
 //		Player player = playerObj.GetComponent<Player>();
-		print(player);
-		if (player != null) {
-			print("ESTOU AQUI");
-			player.health -= this.healthPoints;
-		}
+//		print(player);
+//		if (player != null) {
+//			print("ESTOU AQUI");
+//			player.health -= this.healthPoints;
+//		}
 	}
 }
