@@ -205,6 +205,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e06cc1d66d889945aac6f9028a96f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
+  cost: 0
+  charges: 0
+  cardName: 
+  damage: 30
 --- !u!114 &114994940097480666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,9 +222,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
-  cost: 0
+  cost: 0.05
   charges: 0
   cardName: 
+  damage: 30
   arrow: {fileID: 1388594680840378}
   arrowCooldown: 1
 --- !u!212 &212797630227544138
