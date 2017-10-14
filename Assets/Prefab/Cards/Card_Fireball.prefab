@@ -118,11 +118,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0.5
-  cost: 0
+  cost: 0.01
   charges: 0
   cardName: 
+  damage: 30
   speed: 800
-  player: {fileID: 0}
+  player: {fileID: 1759245033207774, guid: 6f7e679f9e0404bf9b2868c35f96538e, type: 2}
 --- !u!212 &212481802122572328
 SpriteRenderer:
   m_ObjectHideFlags: 1

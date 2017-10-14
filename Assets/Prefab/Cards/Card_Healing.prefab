@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1740621deabd24a6a9f066f0cd336d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1
-  cost: 0
+  cooldown: 0.5
+  cost: 0.01
   charges: 0
   cardName: 
-  damage: 0
+  damage: 20
   healthPoints: 10

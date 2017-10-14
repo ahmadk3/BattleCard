@@ -94,7 +94,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.1
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -129,10 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009087b5f9d04a04f9dac353764347a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1
-  cost: 0
+  cooldown: 3
+  cost: 0.01
   charges: 0
   cardName: 
-  damage: 50
+  damage: 80
   speed: 70
-  player: {fileID: 0}
+  player: {fileID: 1759245033207774, guid: 6f7e679f9e0404bf9b2868c35f96538e, type: 2}
