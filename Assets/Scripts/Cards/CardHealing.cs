@@ -8,11 +8,10 @@ public class CardHealing : Card {
 
 	// Use this for initialization
 	void Start () {
-		this.cooldown = 1;
-
 		Player player = GameObject.Find ("Player").GetComponent<Player> ();
 		if (player != null) {
-			player.health += healthPoints;
+			player.health = Mathf.Min(player.health + healthPoints, player.maxHealth);
 		}
+		Destroy(this.gameObject);
 	}
 }
