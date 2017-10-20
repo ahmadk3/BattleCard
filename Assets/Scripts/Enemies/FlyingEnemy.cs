@@ -21,15 +21,13 @@ public class FlyingEnemy : Player {
         healthBar = healthBarObject.GetComponent<Image>();
         player = GameObject.Find("Player");
         Physics2D.IgnoreLayerCollision(10, 9);
+        Physics2D.IgnoreLayerCollision(11, 9, true);
     }
 
     // Update is called once per frame
     void Update() {
         t.position += new Vector3(1, 1, 1);
         t.position -= new Vector3(1, 1, 1);
-        t.position = t.position + new Vector3(0.0f, Mathf.Sin(Time.time * 3), 0.0f) / 20;
-
-        rb.AddForce(player.transform.position - transform.position);
 
         healthBar.fillAmount = getHealthPercentage();
         if (this.health <= 0.0f)
@@ -38,9 +36,13 @@ public class FlyingEnemy : Player {
         }
 
         Vector3 clampedPosition = transform.position;
-        clampedPosition.x = Mathf.Clamp(transform.position.x, -17, 17f);
-        // re-assigning the transform's position will clamp it
         transform.position = clampedPosition;
+    }
+
+    void FixedUpdate()
+    {
+        t.position = Vector3.MoveTowards(t.position, player.transform.position, 0.15f);
+        t.position = t.position + new Vector3(Mathf.Sin(Time.time * 10), Mathf.Sin(Time.time * 5), 0.0f) / 20;
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -57,22 +59,14 @@ public class FlyingEnemy : Player {
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            Physics2D.IgnoreLayerCollision(11, 9, true);
             if (Time.time >= nextHit)
             {
                 nextHit = Time.time + hitCooldown;
                 Player player = other.gameObject.GetComponent<Player>();
                 player.health -= damage;
+                Debug.Log("hit");
             }
 
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.tag.Equals("Player"))
-        {
-            Physics2D.IgnoreLayerCollision(11, 9, false);
         }
     }
 }

@@ -6,25 +6,19 @@ using UnityEngine.UI;
 public class PlayerController : Player {
 
     public float jumpSpeed = 5.0f;
-    public float firerate = 0.3f;
-    public GameObject fireball;
 
     private Rigidbody2D rb;
     private Transform t;
     private float nextfire = 0.0f;
     private bool isGrounded = false;
 
-    public List<GameObject> objects = new List<GameObject>();
-
-    public GameObject healthBarObject;
     private Image healthBar;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         t = GetComponent<Transform>();
-
-        healthBar = healthBarObject.GetComponent<Image>();
+        healthBar = helper.FindDeepChild(t, "HealthBar").gameObject.GetComponent<Image>();
     }
 	
 	// Update is called once per frame
