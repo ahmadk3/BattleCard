@@ -20,7 +20,6 @@ public class PlayerController : Player {
 
     public float jumpSpeed = 5.0f;
     public float firerate = 0.3f;
-    public GameObject fireball;
 
     private Rigidbody2D rb;
     private Transform t;
