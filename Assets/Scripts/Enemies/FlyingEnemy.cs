@@ -21,9 +21,7 @@ public class FlyingEnemy : Player {
         rb = GetComponent<Rigidbody2D>();
         healthBar = healthBarObject.GetComponent<Image>();
         player = GameObject.Find("Player");
-        //Physics2D.IgnoreLayerCollision(10, 9);
-        //Physics2D.IgnoreLayerCollision(11, 9, false);
-        rand = Random.Range(0, 1);
+        rand = Random.Range(0, 1000)/100;
     }
 
     // Update is called once per frame
@@ -43,8 +41,9 @@ public class FlyingEnemy : Player {
 
     void FixedUpdate()
     {
+        Debug.Log(rand);
         t.position = Vector3.MoveTowards(t.position, player.transform.position, 0.15f);
-        t.position = t.position + new Vector3(Mathf.Sin(Time.time * 10 * rand), Mathf.Sin(Time.time * 5 * rand), 0.0f) / 20;
+        t.position = t.position + new Vector3(Mathf.Sin((Time.time * 10) + rand), Mathf.Sin((Time.time * 10) + rand), 0.0f) / 20;
     }
 
     void OnCollisionEnter2D(Collision2D other)
