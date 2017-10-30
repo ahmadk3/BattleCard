@@ -9,9 +9,7 @@ public static class helper
         var result = aParent.Find(aName);
         if (result != null)
         {
-            Debug.Log("success");
             return result;
-
         }
         foreach (Transform child in aParent)
         {
