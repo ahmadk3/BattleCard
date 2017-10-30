@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class CardsHolder : MonoBehaviour {
 
-    public GameObject[] cards = new GameObject[4];
+    public GameObject[] cards = new GameObject[5];
 
 	public Rect LifeBar;
 //	public Text timeTextFireball;
     private Transform t;
     private Rigidbody rb;
 	public Slider ManaBar;
-	private float[] nextfire = new float[4];
+	private float[] nextfire = new float[5];
 //	private float[] manaCost = new float[4];
 
 	// Use this for initialization
@@ -21,7 +21,7 @@ public class CardsHolder : MonoBehaviour {
         t = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
 
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < 5; i++)
         {
             nextfire[i] = 0.0f;
         }
@@ -70,5 +70,15 @@ public class CardsHolder : MonoBehaviour {
 			ManaBar.value -= card.GetComponent<Card> ().cost;
             card.SetActive(true);
         }
+
+		else if (Input.GetKey("5") && Time.time > nextfire[4])
+		{
+			// HEALING
+			Debug.Log("HEY");
+			GameObject card = (GameObject)Instantiate(cards[4], t.position, t.rotation);
+			nextfire[4] = Time.time + card.GetComponent<Card>().cooldown;
+			ManaBar.value -= card.GetComponent<Card> ().cost;
+			card.SetActive(true);
+		}
     }
 }

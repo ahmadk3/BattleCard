@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerController : Player {
 
     public float jumpSpeed = 5.0f;
-
     private Rigidbody2D rb;
     private Transform t;
     private float nextfire = 0.0f;
