@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : Player {
 
@@ -41,7 +42,9 @@ public class PlayerController : Player {
         healthBar.fillAmount = getHealthPercentage();
         if (this.health <= 0.0f)
         {
-            Destroy(this.gameObject);
+			Debug.Log ("NEW SCENE");
+			SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+//            Destroy(this.gameObject);
         }
     }
 
