@@ -33,6 +33,8 @@ public class FlyingEnemy : Player {
         if (this.health <= 0.0f)
         {
             Destroy(this.gameObject);
+            GameController gc = GameObject.Find("GameController").GetComponent<GameController>();
+            gc.enemiesCount++;
         }
 
         Vector3 clampedPosition = transform.position;
@@ -41,7 +43,6 @@ public class FlyingEnemy : Player {
 
     void FixedUpdate()
     {
-        Debug.Log(rand);
         t.position = Vector3.MoveTowards(t.position, player.transform.position, 0.15f);
         t.position = t.position + new Vector3(Mathf.Sin((Time.time * 10) + rand), Mathf.Sin((Time.time * 10) + rand), 0.0f) / 20;
     }
