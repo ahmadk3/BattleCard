@@ -43,7 +43,9 @@ public class PlayerController : Player {
         if (this.health <= 0.0f)
         {
 			Debug.Log ("NEW SCENE");
-			SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+			Scene sceneToLoad = SceneManager.GetSceneByName("GameOver");
+//			Debug.Log ("GAME OVER sceneToLoad", sceneToLoad);
+			SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Additive);
 //            Destroy(this.gameObject);
         }
     }
