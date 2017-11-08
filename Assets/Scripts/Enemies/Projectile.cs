@@ -35,6 +35,8 @@ public class Projectile : Card
             collision.GetComponent<Rigidbody2D>().AddForce(this.rb.velocity * 10);
             this.rb.velocity = Vector3.zero;
             this.rb.angularVelocity = 0.0f;
+
+			SoundManager.Instance.PlayOneShot(SoundManager.Instance.shot);
             Player target = collision.GetComponent<Player>();
             target.health -= this.damage;
         }

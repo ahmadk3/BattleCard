@@ -53,6 +53,7 @@ public class FlyingEnemy : Player {
     {
         if (other.gameObject.tag.Equals("Player") && Time.time >= nextHit)
         {
+			SoundManager.Instance.PlayOneShot(SoundManager.Instance.shot);
             nextHit = Time.time + hitCooldown;
             Player player = other.gameObject.GetComponent<Player>();
             player.health -= damage;

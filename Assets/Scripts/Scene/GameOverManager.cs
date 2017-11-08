@@ -11,6 +11,8 @@ public class GameOverManager : MonoBehaviour {
 	float timeLeft = 5.0f;
 
 	void Start () {
+		// Play the sound effect
+		SoundManager.Instance.PlayOneShot(SoundManager.Instance.winSound);
 		score.text = PlayerScore.score + " pontos";
 	}
 

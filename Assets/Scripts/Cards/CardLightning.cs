@@ -27,7 +27,8 @@ public class CardLightning : Card {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy")
-        {        
+        {    
+			SoundManager.Instance.PlayOneShot(SoundManager.Instance.thunder);
             GameObject go = (GameObject)Instantiate(lightning, other.transform.position + new Vector3(0, 1, -1), new Quaternion(0, 0, 0, 0));
             go.SetActive(true);
             Destroy(go, 2.0f);

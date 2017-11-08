@@ -47,6 +47,10 @@ public class GameController : MonoBehaviour {
 
     void instantiateWave(int waveNumber)
     {
+
+//		TODO: add some SoundEffect in a new wave of enemies
+//		SoundManager.Instance.PlayOneShot(SoundManager.Instance.winSound);
+
         for (int j = 0; j < flying[waveNumber]; j++)
         {
             GameObject enemy = Instantiate(flyingEnemy);

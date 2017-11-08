@@ -37,6 +37,7 @@ public class CardFireball : Card {
             otherRb.AddForce(force, ForceMode2D.Impulse);
             Player target = other.GetComponent<Player>();
             target.health -= this.damage;
+			SoundManager.Instance.PlayOneShot(SoundManager.Instance.fireBall);
         }
         else if (other.tag.Equals("Floor") || other.tag.Equals("Wall"))
         {
