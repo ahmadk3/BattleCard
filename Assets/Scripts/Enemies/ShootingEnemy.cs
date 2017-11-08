@@ -37,7 +37,8 @@ public class ShootingEnemy : Player {
             Destroy(this.gameObject);
             GameController gc = GameObject.Find("GameController").GetComponent<GameController>();
             gc.enemiesCount++;
-            print(gc.enemiesCount);
+
+			PlayerScore.increaseScore(2);
         }
 
         if (Vector3.Distance(player.transform.position, this.t.position) < 20)

@@ -31,6 +31,4 @@ public class Player : MonoBehaviour {
         float percentage = (health * 100.0f)/maxHealth;
         return percentage/100.0f;
     }
-
-
 }
