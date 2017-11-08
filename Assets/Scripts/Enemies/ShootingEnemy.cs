@@ -38,10 +38,7 @@ public class ShootingEnemy : Player {
             GameController gc = GameObject.Find("GameController").GetComponent<GameController>();
             gc.enemiesCount++;
 
-			Player player = GameObject.Find("Player").GetComponent<Player>();
-			if (player != null) {
-				player.increaseScore (2);
-			}
+			PlayerScore.increaseScore(2);
         }
 
         if (Vector3.Distance(player.transform.position, this.t.position) < 20)

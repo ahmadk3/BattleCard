@@ -21,7 +21,6 @@ public class Player : MonoBehaviour {
 	public Buff jumpsBuff;
 	public float speed;
 	public Buff speedBuff;
-	public int score = 0;
 
 	public string team;
 	public List<GameObject> cards = new List<GameObject>();
@@ -32,8 +31,4 @@ public class Player : MonoBehaviour {
         float percentage = (health * 100.0f)/maxHealth;
         return percentage/100.0f;
     }
-
-	public void increaseScore(int points) {
-		this.score += points;
-	}
 }

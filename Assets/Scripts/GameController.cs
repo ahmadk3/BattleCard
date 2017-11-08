@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		PlayerScore.score = 0;
         enemiesPerWave = new int[waves];
 
         for(int i = 0; i < waves; i++)
@@ -40,13 +41,7 @@ public class GameController : MonoBehaviour {
     }
 
 	void updateScoreText() {
-		int score = 0;
-		Player player = GameObject.Find("Player").GetComponent<Player>();
-
-		if (player != null) {
-			score = player.score;
-		}
-
+		int score = PlayerScore.score;
 		scoreText.text = "Score: " + score;
 	}
 
