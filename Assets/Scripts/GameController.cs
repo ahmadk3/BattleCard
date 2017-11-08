@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class GameController : MonoBehaviour {
     private int currentWave = 0;
     public GameObject flyingEnemy;
     public GameObject shootingEnemy;
+	public Text scoreText;
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +36,19 @@ public class GameController : MonoBehaviour {
             instantiateWave(currentWave + 1);
             currentWave++;
         }
+		updateScoreText ();
     }
+
+	void updateScoreText() {
+		int score = 0;
+		Player player = GameObject.Find("Player").GetComponent<Player>();
+
+		if (player != null) {
+			score = player.score;
+		}
+
+		scoreText.text = "Score: " + score;
+	}
 
     void instantiateWave(int waveNumber)
     {

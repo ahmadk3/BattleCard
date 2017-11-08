@@ -35,6 +35,11 @@ public class FlyingEnemy : Player {
             Destroy(this.gameObject);
             GameController gc = GameObject.Find("GameController").GetComponent<GameController>();
             gc.enemiesCount++;
+
+			Player player = GameObject.Find("Player").GetComponent<Player>();
+			if (player != null) {
+				player.increaseScore (1);
+			}
         }
 
         Vector3 clampedPosition = transform.position;
