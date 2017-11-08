@@ -133,3 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winSound: {fileID: 8300000, guid: d0ea8f838ba25443d980bd7a9f3f78f2, type: 3}
+  shot: {fileID: 8300000, guid: e42b09250fbe04b0e89fbd3bd73a8a7b, type: 3}
+  fireBall: {fileID: 8300000, guid: 60d1c32b43bc74ed6a96159906fdbc22, type: 3}
+  arrow: {fileID: 8300000, guid: d7f1eaa8e90dd44fa8407e5c0b1dfc81, type: 3}
+  thunder: {fileID: 8300000, guid: 2f159417643a147ddbb95646875884e6, type: 3}

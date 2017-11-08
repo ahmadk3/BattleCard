@@ -7,6 +7,11 @@ public class SoundManager : MonoBehaviour {
 	public static SoundManager Instance = null;
 
 	public AudioClip winSound;
+	public AudioClip shot;
+	public AudioClip fireBall;
+	public AudioClip arrow;
+	public AudioClip thunder;
+
 	private AudioSource soundEffectAudio;
 
 	// Use this for initialization
@@ -26,6 +31,7 @@ public class SoundManager : MonoBehaviour {
 		// Use this instead
 		AudioSource theSource = GetComponent<AudioSource> ();
 		soundEffectAudio = theSource;
+		DontDestroyOnLoad(gameObject);
 	}
 
 	// Any script can call this to play a sound effect
