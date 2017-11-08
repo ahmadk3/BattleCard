@@ -42,11 +42,8 @@ public class PlayerController : Player {
         healthBar.fillAmount = getHealthPercentage();
         if (this.health <= 0.0f)
         {
-			Debug.Log ("NEW SCENE");
-			Scene sceneToLoad = SceneManager.GetSceneByName("GameOver");
-//			Debug.Log ("GAME OVER sceneToLoad", sceneToLoad);
-			SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Additive);
-//            Destroy(this.gameObject);
+			Destroy(this.gameObject);
+			SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
         }
     }
 
