@@ -9,7 +9,9 @@ public class CardFireball : Card {
     private Rigidbody2D rb;
     private Transform t;
     private Animator anim;
-    
+	bool cardHit = false;
+
+
     // Use this for initialization
 
     void Start () {
@@ -27,7 +29,7 @@ public class CardFireball : Card {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag.Equals("Enemy"))
+		if(other.tag.Equals("Enemy") && !cardHit)
         {
             Destroy(this.gameObject, 1f);
             anim.SetBool("Hit", true);
@@ -38,12 +40,15 @@ public class CardFireball : Card {
             Player target = other.GetComponent<Player>();
             target.health -= this.damage;
 			SoundManager.Instance.PlayOneShot(SoundManager.Instance.fireBall);
+			cardHit = true;
+			Debug.Log ("ENTROU");
         }
-        else if (other.tag.Equals("Floor") || other.tag.Equals("Wall"))
+		else if (other.tag.Equals("Floor") || other.tag.Equals("Wall") && !cardHit)
         {
             Destroy(this.gameObject, 1f);
             anim.SetBool("Hit", true);
             rb.velocity = rb.velocity / 50;
+			cardHit = true;
         }
     }
 }
