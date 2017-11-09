@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour {
     public GameObject flyingEnemy;
     public GameObject shootingEnemy;
 	public Text scoreText;
+    public Transform[] spawns = new Transform[7]; 
 
 	// Use this for initialization
 	void Start () {
@@ -49,12 +50,12 @@ public class GameController : MonoBehaviour {
 
         for (int j = 0; j <= waveNumber; j++)
         {
-            GameObject enemy = Instantiate(flyingEnemy);
+            GameObject enemy = Instantiate(flyingEnemy, spawns[Random.Range(0, 8)]);
             enemy.SetActive(true);
         }
         for (int j = 0; j <= waveNumber; j++)
         {
-            GameObject enemy = Instantiate(shootingEnemy);
+            GameObject enemy = Instantiate(shootingEnemy, spawns[Random.Range(0, 8)]);
             enemy.SetActive(true);
         }
     }

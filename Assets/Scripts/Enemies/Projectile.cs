@@ -38,7 +38,9 @@ public class Projectile : Card
 
 			SoundManager.Instance.PlayOneShot(SoundManager.Instance.shot);
             Player target = collision.GetComponent<Player>();
+            print(target.health);
             target.health -= this.damage;
+            print(target.health);
         }
     }
 }
