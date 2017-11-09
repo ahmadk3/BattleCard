@@ -56,16 +56,16 @@ public class CardsHolder : MonoBehaviour {
     void Update() {
 
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey("j"))
         {
             useCard(0);
         }
 
-        else if (Input.GetKey("q"))
+        else if (Input.GetKey("k"))
         {
             useCard(1);
         }
-        else if (Input.GetKey("e"))
+        else if (Input.GetKey("l"))
         {
             useCard(2);
         }

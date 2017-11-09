@@ -37,6 +37,6 @@ public class SoundManager : MonoBehaviour {
 	// Any script can call this to play a sound effect
 	public void PlayOneShot(AudioClip clip)
 	{
-		soundEffectAudio.PlayOneShot(clip, 0.8F);
+		soundEffectAudio.PlayOneShot(clip, 0.4F);
 	}
 }
