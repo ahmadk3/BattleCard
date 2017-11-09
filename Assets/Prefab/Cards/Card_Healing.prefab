@@ -52,12 +52,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f205cc7106dd94bae8a22ff32e0c9338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 3
+  cooldown: 1
   cost: 0.03
   charges: 0
   cardName: 
   damage: 0
-  healthPoints: 50
+  healthPoints: 200
 --- !u!212 &212758225428413542
 SpriteRenderer:
   m_ObjectHideFlags: 1

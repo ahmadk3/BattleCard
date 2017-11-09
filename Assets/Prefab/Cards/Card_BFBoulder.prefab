@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009087b5f9d04a04f9dac353764347a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 3
+  cooldown: 1
   cost: 0.2
   charges: 0
   cardName: 

@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
-    public int waves = 5;
-    public int[] shooter;
-    public int[] flying;
+    public int waves = 100;
     public int enemiesCount = 0;
     private int[] enemiesPerWave;
     private int currentWave = 0;
@@ -22,7 +20,7 @@ public class GameController : MonoBehaviour {
 
         for(int i = 0; i < waves; i++)
         {
-            enemiesPerWave[i] = enemiesPerWave[i > 0 ? i - 1 : 0] + shooter[i] + flying[i];
+            enemiesPerWave[i] = enemiesPerWave[i > 0 ? i - 1 : 0] + i+1 + i+1;
         }
 
         instantiateWave(0);
@@ -32,7 +30,6 @@ public class GameController : MonoBehaviour {
 	void Update () {
 		if(enemiesCount == enemiesPerWave[currentWave])
         {
-            print("aee");
             instantiateWave(currentWave + 1);
             currentWave++;
         }
@@ -50,12 +47,12 @@ public class GameController : MonoBehaviour {
 //		TODO: add some SoundEffect in a new wave of enemies
 //		SoundManager.Instance.PlayOneShot(SoundManager.Instance.winSound);
 
-        for (int j = 0; j < flying[waveNumber]; j++)
+        for (int j = 0; j <= waveNumber; j++)
         {
             GameObject enemy = Instantiate(flyingEnemy);
             enemy.SetActive(true);
         }
-        for (int j = 0; j < shooter[waveNumber]; j++)
+        for (int j = 0; j <= waveNumber; j++)
         {
             GameObject enemy = Instantiate(shootingEnemy);
             enemy.SetActive(true);

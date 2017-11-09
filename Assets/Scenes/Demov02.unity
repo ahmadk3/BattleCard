@@ -488,9 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa97a4adfd23aa4eb90e5e9d2e99712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: 5
-  shooter: 0100000002000000030000000400000005000000
-  flying: 0100000002000000030000000400000005000000
+  waves: 100
   enemiesCount: 0
   flyingEnemy: {fileID: 938553425}
   shootingEnemy: {fileID: 1583682388}
@@ -998,7 +996,7 @@ Prefab:
     - target: {fileID: 224144803214013010, guid: 77ec9ab8e0cf0451f8d5325c5a585ea5,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 242
+      value: 297
       objectReference: {fileID: 0}
     - target: {fileID: 224144803214013010, guid: 77ec9ab8e0cf0451f8d5325c5a585ea5,
         type: 2}
