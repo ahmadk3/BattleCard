@@ -36,7 +36,6 @@ public class Projectile : Card
             this.rb.velocity = Vector3.zero;
             this.rb.angularVelocity = 0.0f;
 
-			SoundManager.Instance.PlayOneShot(SoundManager.Instance.shot);
             Player target = collision.GetComponent<Player>();
             print(target.health);
             target.health -= this.damage;

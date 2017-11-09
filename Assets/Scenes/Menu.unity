@@ -108,6 +108,89 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &532129100
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4713459509879582, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 272
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713459509879582, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 135.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713459509879582, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713459509879582, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713459509879582, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713459509879582, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713459509879582, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713459509879582, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219841902633826, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+      propertyPath: m_Name
+      value: SoundManagerBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
+        type: 2}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 19f49ec39d9a24622b7e7bb0d2d443ff, type: 3}
+    - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
+        type: 2}
+      propertyPath: Priority
+      value: 148
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114574445495642448, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &532129101 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1219841902633826, guid: 94a7afce9b6574411a196ab8343de875,
+    type: 2}
+  m_PrefabInternal: {fileID: 532129100}
+--- !u!114 &532129102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532129101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb9703e21219406c8f6060c8e095c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &648383343
 Prefab:
   m_ObjectHideFlags: 0
@@ -450,6 +533,26 @@ Prefab:
     - target: {fileID: 4713459509879582, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
+        type: 2}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
+        type: 2}
+      propertyPath: Pan2D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
+        type: 2}
+      propertyPath: m_Pitch
+      value: -0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
+        type: 2}
+      propertyPath: Priority
+      value: 113
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
