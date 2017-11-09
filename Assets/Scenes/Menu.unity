@@ -169,7 +169,16 @@ Prefab:
     - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
         type: 2}
       propertyPath: Priority
-      value: 148
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
+        type: 2}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219841902633826, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114574445495642448, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
@@ -537,7 +546,7 @@ Prefab:
     - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
         type: 2}
       propertyPath: m_Volume
-      value: 1
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
         type: 2}
@@ -547,12 +556,17 @@ Prefab:
     - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
         type: 2}
       propertyPath: m_Pitch
-      value: -0.36
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
         type: 2}
       propertyPath: Priority
-      value: 113
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 82997564177367792, guid: 94a7afce9b6574411a196ab8343de875,
+        type: 2}
+      propertyPath: BypassListenerEffects
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94a7afce9b6574411a196ab8343de875, type: 2}
