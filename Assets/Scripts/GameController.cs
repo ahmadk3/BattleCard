@@ -23,7 +23,6 @@ public class GameController : MonoBehaviour {
         for(int i = 0; i < waves; i++)
         {
             enemiesPerWave[i] = enemiesPerWave[i > 0 ? i - 1 : 0] + shooter[i] + flying[i];
-            print(enemiesPerWave[i]);
         }
 
         instantiateWave(0);

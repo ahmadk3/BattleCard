@@ -13,6 +13,7 @@ public class PlayerController : Player {
     private bool isGrounded = false;
 
     private Image healthBar;
+    
 
     // Use this for initialization
     void Start () {
