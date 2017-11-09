@@ -50,12 +50,12 @@ public class GameController : MonoBehaviour {
 
         for (int j = 0; j <= waveNumber; j++)
         {
-            GameObject enemy = Instantiate(flyingEnemy, spawns[Random.Range(0, 8)]);
+            GameObject enemy = Instantiate(flyingEnemy, spawns[Random.Range(0, 6)]);
             enemy.SetActive(true);
         }
         for (int j = 0; j <= waveNumber; j++)
         {
-            GameObject enemy = Instantiate(shootingEnemy, spawns[Random.Range(0, 8)]);
+            GameObject enemy = Instantiate(shootingEnemy, spawns[Random.Range(0, 6)]);
             enemy.SetActive(true);
         }
     }
