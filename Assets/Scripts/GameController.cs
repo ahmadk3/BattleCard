@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour {
     public GameObject flyingEnemy;
     public GameObject shootingEnemy;
 	public Text scoreText;
+	public Text waveText;
     public Transform[] spawns = new Transform[7]; 
 
 	// Use this for initialization
@@ -31,8 +32,10 @@ public class GameController : MonoBehaviour {
 	void Update () {
 		if(enemiesCount == enemiesPerWave[currentWave])
         {
-            instantiateWave(currentWave + 1);
-            currentWave++;
+			currentWave++;
+			instantiateWave(currentWave);
+			print (currentWave);
+			waveText.text = "Wave: " + currentWave;
         }
 		updateScoreText ();
     }
