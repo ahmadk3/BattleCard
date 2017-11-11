@@ -26,14 +26,15 @@ public class PlayerController : Player {
 	void Update () {
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0) * this.speed;
         transform.position += move * Time.deltaTime;
+		Transform spriteChild = gameObject.transform.GetChild (0);
 
         if (Input.GetKey("a"))
         {
-            t.rotation = Quaternion.Euler(0, 180.0f, 0);
+			spriteChild.rotation = Quaternion.Euler(0, 180.0f, 0);
         }
         if (Input.GetKey("d"))
         {
-            t.rotation = Quaternion.Euler(0, 0, 0);
+			spriteChild.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKey("w") && isGrounded)
         {

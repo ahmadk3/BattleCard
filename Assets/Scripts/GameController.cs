@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour {
 			currentWave++;
 			instantiateWave(currentWave);
 			print (currentWave);
-			waveText.text = "Wave: " + currentWave;
+			waveText.text = "Wave: " + (currentWave + 1);
         }
 		updateScoreText ();
     }
