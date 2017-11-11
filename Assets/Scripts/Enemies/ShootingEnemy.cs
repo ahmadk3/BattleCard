@@ -60,9 +60,18 @@ public class ShootingEnemy : Player {
                 t.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }
         }
+		updateAnimation ();
+	}
 
+	void updateAnimation() {
+		Player player = GameObject.Find("Player").GetComponent<Player>();
 
-    }
+		if (player != null) {
+			Animator anim = GetComponent<Animator> ();
+			bool inverted = player.transform.position.x <= transform.position.x;
+			anim.SetBool ("inverted", inverted);
+		}
+	}
 
     void FixedUpdate()
     {
